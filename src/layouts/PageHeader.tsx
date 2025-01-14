@@ -1,10 +1,16 @@
-import { Bell, Menu, Mic, Search, Upload, User } from "lucide-react";
+import { ArrowLeft, Bell, Menu, Mic, Search, Upload, User } from "lucide-react";
 import logo from "../assets/Logo.png";
 import { Button } from "../components/Button";
+import { useState } from "react";
 export default function PageHeader() {
+  const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
   return (
     <div className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
-      <div className="flex gap-4 items-center flex-shrink-0">
+      <div
+        className={`flex-shrink-0 gap-4 items-center ${
+          showFullWidthSearch ? "hidden" : "flex"
+        }`}
+      >
         <Button variant="ghost">
           <Menu />
         </Button>
@@ -13,7 +19,22 @@ export default function PageHeader() {
         </a>
       </div>
 
-      <form className="flex gap-4 flex-grow justify-center">
+      <form
+        className={` gap-4 flex-grow justify-center ${
+          showFullWidthSearch ? "flex" : "hidden md:flex"
+        }`}
+      >
+        {showFullWidthSearch && (
+          <Button
+            onClick={() => setShowFullWidthSearch(false)}
+            type="button"
+            size="icon"
+            variant="ghost"
+            className=" flex-shrink-0"
+          >
+            <ArrowLeft />
+          </Button>
+        )}
         <div className="flex flex-grow max-w-[600px]">
           <input
             type="search"
@@ -28,7 +49,25 @@ export default function PageHeader() {
           <Mic />
         </Button>
       </form>
-      <div className="flex flex-shrink-0 md:gap-2">
+      <div
+        className={`flex-shrink-0 md:gap-2 ${
+          showFullWidthSearch ? "hidden" : "flex"
+        }`}
+      >
+        <Button
+          onClick={() => setShowFullWidthSearch(true)}
+          variant="ghost"
+          className="md:hidden"
+        >
+          <Search />
+        </Button>
+        <Button
+          type="button"
+          variant="ghost"
+          className="md:hidden flex-shrink-0"
+        >
+          <Mic />
+        </Button>
         <Button size="icon" variant="ghost">
           <Upload />
         </Button>
