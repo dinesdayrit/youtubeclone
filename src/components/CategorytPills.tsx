@@ -1,6 +1,8 @@
 import { Button } from "./Button";
-
-export default function CategorytPills() {
+type CategoryPillProps = {
+  categories: string[];
+};
+export default function CategorytPills({ categories }: CategoryPillProps) {
   return (
     <div className="overflow-x-hidden relative">
       <div className="flex whitespace-nowrap gap-3 transition-transform w-[max-content]">
