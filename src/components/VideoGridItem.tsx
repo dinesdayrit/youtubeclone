@@ -12,6 +12,27 @@ type VideoGridItemProps = {
   thumbnailUrl: string;
   videoUrl: string;
 };
-export default function VideoGridItem() {
-  return <div>VideoGridItem</div>;
+export default function VideoGridItem({
+  id,
+  title,
+  channel,
+  views,
+  postedAt,
+  duration,
+  thumbnailUrl,
+  videoUrl,
+}: VideoGridItemProps) {
+  return (
+    <div className="flex flex-col gap-2">
+      <a href={`/watch?v=${id}`} className="relative aspect-video">
+        <img
+          src={thumbnailUrl}
+          className="block w-full h-full object-cover rounded-xl"
+        />
+        <div className="absolute bottom-1 right-1 bg-secondary-dark text-secondary text-sm px-0.5 rounded">
+          {duration}
+        </div>
+      </a>
+    </div>
+  );
 }
