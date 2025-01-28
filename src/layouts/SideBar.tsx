@@ -1,4 +1,4 @@
-import { Clapperboard, Home, Repeat } from "lucide-react";
+import { Clapperboard, Home, Library, Repeat } from "lucide-react";
 import { ElementType } from "react";
 import { twMerge } from "tailwind-merge";
 import { buttonStyles } from "../components/Button";
@@ -15,6 +15,7 @@ export default function SideBar() {
         title="Subscriptions"
         url="/subscriptions"
       />
+      <SmallSidebarItem Icon={Library} title="Library" url="/library" />
     </aside>
   );
 }
