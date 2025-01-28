@@ -1,3 +1,41 @@
+import { Clapperboard, Home, Repeat } from "lucide-react";
+import { ElementType } from "react";
+import { twMerge } from "tailwind-merge";
+import { buttonStyles } from "../components/Button";
+
 export default function SideBar() {
-  return <div>SideBar</div>;
+  return (
+    <aside
+      className={`sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 `}
+    >
+      <SmallSidebarItem Icon={Home} title="Home" url="/" />
+      <SmallSidebarItem Icon={Repeat} title="Shots" url="/shorts" />
+      <SmallSidebarItem
+        Icon={Clapperboard}
+        title="Subscriptions"
+        url="/subscriptions"
+      />
+    </aside>
+  );
+}
+
+type SmallSidebarItemProps = {
+  Icon: ElementType;
+  title: string;
+  url: string;
+};
+
+function SmallSidebarItem({ Icon, title, url }: SmallSidebarItemProps) {
+  return (
+    <a
+      href={url}
+      className={twMerge(
+        buttonStyles({ variant: "ghost" }),
+        "py-4 px-1 flex flex-col items-center rounded-lg gap-1"
+      )}
+    >
+      <Icon className="w-6 h-6" />
+      <div className="text-sm">{title}</div>
+    </a>
+  );
 }
