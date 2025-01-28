@@ -1,4 +1,4 @@
-import { Home, Repeat } from "lucide-react";
+import { Clapperboard, Home, Repeat } from "lucide-react";
 import { ElementType } from "react";
 import { twMerge } from "tailwind-merge";
 import { buttonStyles } from "../components/Button";
@@ -10,6 +10,11 @@ export default function SideBar() {
     >
       <SmallSidebarItem Icon={Home} title="Home" url="/" />
       <SmallSidebarItem Icon={Repeat} title="Shots" url="/shorts" />
+      <SmallSidebarItem
+        Icon={Clapperboard}
+        title="Subscriptions"
+        url="/subscriptions"
+      />
     </aside>
   );
 }
