@@ -2,8 +2,11 @@ import {
   ChevronDown,
   ChevronUp,
   Clapperboard,
+  History,
+  Clock,
   Home,
   Library,
+  PlaySquare,
   Repeat,
 } from "lucide-react";
 import { Children, ElementType, ReactNode, useState } from "react";
@@ -35,6 +38,20 @@ export default function SideBar() {
           />
         </LargeSidebarSection>
         <hr />
+        <LargeSidebarSection visibleItemCount={5}>
+          <LargeSidebarItem Icon={Library} title="Library" url="/library" />
+          <LargeSidebarItem Icon={History} title="History" url="/history" />
+          <LargeSidebarItem
+            Icon={PlaySquare}
+            title="Your Videos"
+            url="/your-videos"
+          />
+          <LargeSidebarItem
+            Icon={Clock}
+            title="Watch Later"
+            url="/playlist?list=WL"
+          />
+        </LargeSidebarSection>
       </aside>
     </>
   );
