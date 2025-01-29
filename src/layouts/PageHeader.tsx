@@ -2,25 +2,14 @@ import { ArrowLeft, Bell, Menu, Mic, Search, Upload, User } from "lucide-react";
 import logo from "../assets/Logo.png";
 import { Button } from "../components/Button";
 import { useState } from "react";
+import { useSidebarContext } from "../context/SidebarContext";
 export default function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
   return (
     <div className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
-      <div
-        className={`flex-shrink-0 gap-4 items-center ${
-          showFullWidthSearch ? "hidden" : "flex"
-        }`}
-      >
-        <Button variant="ghost">
-          <Menu />
-        </Button>
-        <a href="/">
-          <img src={logo} className="h-14" />
-        </a>
-      </div>
-
+      <PageHeaderFirstSection hidden={showFullWidthSearch} />
       <form
-        className={` gap-4 flex-grow justify-center ${
+        className={`gap-4 flex-grow justify-center ${
           showFullWidthSearch ? "flex" : "hidden md:flex"
         }`}
       >
@@ -30,7 +19,7 @@ export default function PageHeader() {
             type="button"
             size="icon"
             variant="ghost"
-            className=" flex-shrink-0"
+            className="flex-shrink-0"
           >
             <ArrowLeft />
           </Button>
@@ -56,16 +45,13 @@ export default function PageHeader() {
       >
         <Button
           onClick={() => setShowFullWidthSearch(true)}
+          size="icon"
           variant="ghost"
           className="md:hidden"
         >
           <Search />
         </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          className="md:hidden flex-shrink-0"
-        >
+        <Button size="icon" variant="ghost" className="md:hidden">
           <Mic />
         </Button>
         <Button size="icon" variant="ghost">
@@ -78,6 +64,31 @@ export default function PageHeader() {
           <User />
         </Button>
       </div>
+    </div>
+  );
+}
+
+type PageHeaderFirstSectionProps = {
+  hidden?: boolean;
+};
+
+export function PageHeaderFirstSection({
+  hidden = false,
+}: PageHeaderFirstSectionProps) {
+  const { toggle } = useSidebarContext();
+
+  return (
+    <div
+      className={`gap-4 items-center flex-shrink-0 ${
+        hidden ? "hidden" : "flex"
+      }`}
+    >
+      <Button onClick={toggle} variant="ghost" size="icon">
+        <Menu />
+      </Button>
+      <a href="/">
+        <img src={logo} className="h-14" />
+      </a>
     </div>
   );
 }
