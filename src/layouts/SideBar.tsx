@@ -8,10 +8,12 @@ import {
   Library,
   PlaySquare,
   Repeat,
+  ListVideo,
 } from "lucide-react";
 import { Children, ElementType, ReactNode, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { Button, buttonStyles } from "../components/Button";
+import { playlists } from "../data/sidebar";
 
 export default function SideBar() {
   return (
@@ -51,6 +53,14 @@ export default function SideBar() {
             title="Watch Later"
             url="/playlist?list=WL"
           />
+          {playlists.map((playlist) => (
+            <LargeSidebarItem
+              key={playlist.id}
+              Icon={ListVideo}
+              title={playlist.name}
+              url={`/playlist?list=${playlist.id}`}
+            />
+          ))}
         </LargeSidebarSection>
       </aside>
     </>
