@@ -21,10 +21,10 @@ export const videos = [
     id: "1",
     title: "CSS Anchor Is The Best New CSS Feature Since Flexbox",
     channel: {
-      name: "Web Dev Simplified",
-      id: "WebDevSimplified",
+      name: "Joh Doe",
+      id: "JonhDoe",
       profileUrl:
-        "https://yt3.ggpht.com/ytc/APkrFKZWeMCsx4Q9e_Hm6nhOOUQ3fv96QGUXiMr1-pPP=s48-c-k-c0x00ffffff-no-rj",
+        "https://img.freepik.com/free-vector/cute-girl-gaming-holding-joystick-cartoon-icon-illustration-people-technology-icon-concept-isolated-flat-cartoon-style_138676-2169.jpg?t=st=1738829672~exp=1738833272~hmac=f871e753d3d4de572eb3827c73f84b8b3f8767bc45e54da1a79f8a4e475f3620&w=740",
     },
     views: 222536,
     postedAt: new Date("2023-08-29"),
@@ -37,10 +37,10 @@ export const videos = [
     id: "2",
     title: "NEW Way To Create Variables In JavaScript",
     channel: {
-      name: "Web Dev Simplified",
-      id: "WebDevSimplified",
+      name: "Joh Doe",
+      id: "JonhDoe",
       profileUrl:
-        "https://yt3.ggpht.com/ytc/APkrFKZWeMCsx4Q9e_Hm6nhOOUQ3fv96QGUXiMr1-pPP=s48-c-k-c0x00ffffff-no-rj",
+        "https://img.freepik.com/free-vector/cute-girl-gaming-holding-joystick-cartoon-icon-illustration-people-technology-icon-concept-isolated-flat-cartoon-style_138676-2169.jpg?t=st=1738829672~exp=1738833272~hmac=f871e753d3d4de572eb3827c73f84b8b3f8767bc45e54da1a79f8a4e475f3620&w=740",
     },
     views: 257136,
     postedAt: new Date("2023-08-22"),
@@ -85,10 +85,10 @@ export const videos = [
     id: "5",
     title: "I Cannot Believe React Made A Hook For This",
     channel: {
-      name: "Web Dev Simplified",
-      id: "WebDevSimplified",
+      name: "Joh Doe",
+      id: "JonhDoe",
       profileUrl:
-        "https://yt3.ggpht.com/ytc/APkrFKZWeMCsx4Q9e_Hm6nhOOUQ3fv96QGUXiMr1-pPP=s48-c-k-c0x00ffffff-no-rj",
+        "https://img.freepik.com/free-vector/cute-girl-gaming-holding-joystick-cartoon-icon-illustration-people-technology-icon-concept-isolated-flat-cartoon-style_138676-2169.jpg?t=st=1738829672~exp=1738833272~hmac=f871e753d3d4de572eb3827c73f84b8b3f8767bc45e54da1a79f8a4e475f3620&w=740",
     },
     views: 42345,
     postedAt: new Date("2023-03-02"),
